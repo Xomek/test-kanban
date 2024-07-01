@@ -1,5 +1,15 @@
 @import "../../styles/palette.css";
 
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    opacity: 0;
+  }
+}
+
 .title {
   display: flex;
   align-items: center;
@@ -59,4 +69,9 @@
 
 .modal .MuiButton-containedPrimary:active {
   background-color: #0d47a1;
+}
+
+.kanbanСontainer {
+  flex: 1;
+  overflow: auto;
 }

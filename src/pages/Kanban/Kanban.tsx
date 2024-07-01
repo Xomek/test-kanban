@@ -61,12 +61,14 @@ const Kanban: React.FC = () => {
         </div>
       </Modal>
 
-      <KanbanBoard
-        board={board}
-        addTask={addTask}
-        removeColumn={removeColumn}
-        setBoard={setBoard}
-      />
+      <div className={styles.kanbanContainer}>
+        <KanbanBoard
+          board={board}
+          addTask={addTask}
+          removeColumn={removeColumn}
+          setBoard={setBoard}
+        />
+      </div>
     </div>
   );
 };
