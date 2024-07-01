@@ -28,7 +28,7 @@ const Kanban: React.FC = () => {
   };
 
   const addTask = (columnId: string) => {
-    const newTask = { id: Date.now().toString(), title: `Task ${Date.now()}` };
+    const newTask = { id: Date.now().toString(), title: `#20413:` };
     const newColumns = board.columns.map((column) => {
       if (column.id === columnId) {
         return { ...column, tasks: [...column.tasks, newTask] };

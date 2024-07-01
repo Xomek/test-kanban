@@ -7,7 +7,7 @@ import AddIcon from "@mui/icons-material/Add";
 import type { ColumnProps } from "./Column.types";
 
 import styles from "./Column.module.css";
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 
 const Column: React.FC<ColumnProps> = ({
   column,
@@ -47,13 +47,14 @@ const Column: React.FC<ColumnProps> = ({
         ))}
       </div>
 
-      <IconButton
+      <Button
         className={styles.addIcon}
-        color="primary"
+        variant="contained"
+        color="info"
         onClick={() => onAddTask(column.id)}
       >
         <AddIcon />
-      </IconButton>
+      </Button>
     </div>
   );
 };

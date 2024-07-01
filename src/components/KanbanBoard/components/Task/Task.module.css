@@ -8,13 +8,17 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-overflow: ellipsis;
-  word-break: break-all;
+  word-break: keep-all;
   border-radius: 4px;
 }
 
-.title {
+.content {
   padding: 15px;
+}
+
+.title {
   color: #3e65be;
+  font-weight: 700;
 }
 
 .avatars {
