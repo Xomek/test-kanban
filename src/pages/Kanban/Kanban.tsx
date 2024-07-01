@@ -2,7 +2,7 @@ import { Button, Modal, TextField } from "@mui/material";
 import { KanbanBoard } from "../../components";
 import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSharp";
 import WavesOutlinedIcon from "@mui/icons-material/WavesOutlined";
-import { useKanban } from "./useKanban";
+import { useKanban } from "./useKanban.hook";
 
 import styles from "./Kanban.module.css";
 
