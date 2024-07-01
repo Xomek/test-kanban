@@ -3,6 +3,7 @@ import Task from "../Task";
 import { Task as TaskType } from "../../../../types/task.types";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
+import PlayCircleFilledWhiteOutlinedIcon from "@mui/icons-material/PlayCircleFilledWhiteOutlined";
 import AddIcon from "@mui/icons-material/Add";
 import { Button } from "@mui/material";
 import type { ColumnProps } from "./Column.types";
@@ -17,7 +18,10 @@ const Column: React.FC<ColumnProps> = ({
   return (
     <div className={styles.column}>
       <div className={styles.columnHeader}>
-        <h3>{column.title}</h3>
+        <h3 className={styles.title}>
+          <PlayCircleFilledWhiteOutlinedIcon color="primary" />
+          {column.title}
+        </h3>
         <div>
           <CreateOutlinedIcon />
           <DeleteOutlineOutlinedIcon
