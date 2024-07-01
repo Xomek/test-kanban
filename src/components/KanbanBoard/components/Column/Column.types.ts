@@ -10,5 +10,4 @@ export interface ColumnProps {
   column: ColumnType;
   onAddTask: (columnId: string) => void;
   onRemoveColumn: (columnId: string) => void;
-  onUpdateColumnTitle: (columnId: string) => void;
 }

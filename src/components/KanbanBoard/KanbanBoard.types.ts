@@ -9,6 +9,5 @@ export interface BoardProps {
   board: BoardType;
   addTask: (columnId: string) => void;
   removeColumn: (columnId: string) => void;
-  updateColumnTitle: (columnId: string) => void;
   setBoard: Dispatch<SetStateAction<BoardType>>;
 }

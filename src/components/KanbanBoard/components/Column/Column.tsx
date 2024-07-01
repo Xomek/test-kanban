@@ -4,16 +4,15 @@ import { Task as TaskType } from "../../../../types/task.types";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
 import AddIcon from "@mui/icons-material/Add";
+import { Button } from "@mui/material";
 import type { ColumnProps } from "./Column.types";
 
 import styles from "./Column.module.css";
-import { Button, IconButton } from "@mui/material";
 
 const Column: React.FC<ColumnProps> = ({
   column,
   onAddTask,
   onRemoveColumn,
-  // onUpdateColumnTitle,
 }) => {
   return (
     <div className={styles.column}>

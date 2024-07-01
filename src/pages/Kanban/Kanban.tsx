@@ -1,5 +1,5 @@
-import { Button } from "@mui/material";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Button, Modal, TextField } from "@mui/material";
 import { KanbanBoard } from "../../components";
 import PlayCircleOutlineSharpIcon from "@mui/icons-material/PlayCircleOutlineSharp";
 import WavesOutlinedIcon from "@mui/icons-material/WavesOutlined";
@@ -10,14 +10,26 @@ import styles from "./Kanban.module.css";
 
 const Kanban: React.FC = () => {
   const [board, setBoard] = useState<BoardType>({ columns: [] });
+  const [openModal, setOpenModal] = useState(false);
+  const [newColumnTitle, setNewColumnTitle] = useState("");
 
-  const addColumn = () => {
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
+  const handleAddColumn = () => {
     const newColumn: ColumnType = {
       id: Date.now().toString(),
-      title: `Column ${board.columns.length + 1}`,
+      title: newColumnTitle.trim() || `Column ${board.columns.length + 1}`,
       tasks: [],
     };
     setBoard({ ...board, columns: [...board.columns, newColumn] });
+    handleCloseModal();
+    setNewColumnTitle("");
   };
 
   const removeColumn = (columnId: string) => {
@@ -38,16 +50,6 @@ const Kanban: React.FC = () => {
     setBoard({ ...board, columns: newColumns });
   };
 
-  // const updateColumnTitle = (columnId: string, newTitle: string) => {
-  //   const newColumns = board.columns.map((column) => {
-  //     if (column.id === columnId) {
-  //       return { ...column, title: newTitle };
-  //     }
-  //     return column;
-  //   });
-  //   setBoard({ ...board, columns: newColumns });
-  // };
-
   return (
     <div className={styles.page}>
       <div className={styles.title}>
@@ -61,10 +63,33 @@ const Kanban: React.FC = () => {
           <WavesOutlinedIcon />
           Процессы проекта CRM - система
         </div>
-        <Button onClick={addColumn} variant="contained">
+        <Button onClick={handleOpenModal} variant="contained">
           Добавить столбец
         </Button>
       </div>
+
+      <Modal open={openModal} onClose={handleCloseModal}>
+        <div className={styles.modal}>
+          <h2>Введите заголовок для нового столбца</h2>
+          <TextField
+            label="Заголовок столбца"
+            value={newColumnTitle}
+            onChange={(e) => setNewColumnTitle(e.target.value)}
+            variant="outlined"
+            fullWidth
+            autoFocus
+            sx={{ mb: 1 }}
+          />
+          <Button
+            fullWidth
+            onClick={handleAddColumn}
+            variant="contained"
+            color="primary"
+          >
+            Добавить
+          </Button>
+        </div>
+      </Modal>
 
       <KanbanBoard
         board={board}

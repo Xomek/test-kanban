@@ -8,7 +8,6 @@ const KanbanBoard: React.FC<BoardProps> = ({
   board,
   addTask,
   removeColumn,
-  updateColumnTitle,
   setBoard,
 }) => {
   const onDragEnd = (result: DropResult) => {
@@ -78,7 +77,6 @@ const KanbanBoard: React.FC<BoardProps> = ({
                   column={column}
                   onAddTask={addTask}
                   onRemoveColumn={removeColumn}
-                  onUpdateColumnTitle={updateColumnTitle}
                 />
                 {provided.placeholder}
               </div>
