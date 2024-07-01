@@ -1,0 +1,26 @@
+@import "../../../../styles/palette.css";
+
+.task {
+  background-color: var(--kanban-card);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  border-radius: 4px;
+}
+
+.title {
+  padding: 15px;
+  color: #3e65be;
+}
+
+.avatars {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #efefef;
+}

@@ -1,0 +1,11 @@
+.menu {
+  display: flex;
+  gap: 25px;
+  color: #b8b8b8;
+  font-weight: 500;
+}
+
+.item {
+  padding: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.content {
+  padding: 40px;
+  flex: 1;
+}
+
+.main {
+  display: flex;
+  height: calc(100vh - 80px);
+}

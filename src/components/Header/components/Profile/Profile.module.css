@@ -1,0 +1,19 @@
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.wallet {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.btnProfile {
+  display: flex;
+  gap: 10px;
+}
+
+.name {
+  color: white;
+}
