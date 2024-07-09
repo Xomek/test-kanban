@@ -5,7 +5,7 @@ import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined
 import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
 import PlayCircleFilledWhiteOutlinedIcon from "@mui/icons-material/PlayCircleFilledWhiteOutlined";
 import AddIcon from "@mui/icons-material/Add";
-import { Button } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import type { ColumnProps } from "./Column.types";
 
 import styles from "./Column.module.css";
@@ -22,13 +22,13 @@ const Column: React.FC<ColumnProps> = ({
           <PlayCircleFilledWhiteOutlinedIcon color="primary" />
           {column.title}
         </h3>
-        <div>
+        <Stack direction="row">
           <CreateOutlinedIcon />
           <DeleteOutlineOutlinedIcon
             style={{ cursor: "pointer" }}
             onClick={() => onRemoveColumn(column.id)}
           />
-        </div>
+        </Stack>
       </div>
       <div className={styles.tasks}>
         {column.tasks.map((task: TaskType, index: number) => (
